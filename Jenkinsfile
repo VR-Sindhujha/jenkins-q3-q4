@@ -11,6 +11,8 @@ pipeline {
             steps {
                 git branch: 'main',
                     url: 'https://github.com/VR-Sindhujha/jenkins-q3-q4.git'
+
+                echo 'Source code downloaded from GitHub'
             }
         }
 
@@ -35,9 +37,11 @@ pipeline {
         success {
             echo 'Deployment completed successfully!'
         }
+
         aborted {
             echo 'Deployment was aborted!'
         }
+
         failure {
             echo 'Pipeline failed!'
         }
